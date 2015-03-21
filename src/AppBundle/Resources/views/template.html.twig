@@ -1,0 +1,51 @@
+<html>
+<head>
+<head lang="en">
+    <title>{% block title %} Untitled {% endblock %}</title>
+    <meta name="Author" content="Dan Searle, www.danwashere.com" />
+    <meta name="Description" content="{% block page_description %}Listados{% endblock %}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+{% block stylesheets %}
+{% endblock %}
+</head>
+<body>
+<link href="http://fonts.googleapis.com/css?family=Raleway:600,400,200" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+      <div class="row">
+        <div class="medium-4 large-6 columns namelogo">
+          <h2>DWH CRM</h2>
+        </div>
+        <div class="medium-8 large-6 columns">
+          <div class="nav-bar text-center">
+            <ul class="button-group">
+                <li><a href="{{ path('_contacts') }}" class="button">Contacts</a></li>
+                <li><a href="{{ path('events_list') }}" class="button">Events</a></li>                
+            </ul>
+          </div>
+        </div>
+      </div>
+
+{% for type, messages in app.session.flashbag.all() %}
+    {% for message in messages %}
+        <div class="flash-{{ type }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+
+{% block body %}{% endblock %}
+
+      <footer class="row">
+        <hr>
+        <div class="columns text-center">
+          <p>Built by <a href="http://www.danwashere.com">Dan Searle</a>.</p>
+        </div>
+      </footer>
+
+{% block javascripts %}
+{% endblock %}
+
+</body>
+</html>

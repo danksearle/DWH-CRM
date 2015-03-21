@@ -1,0 +1,17 @@
+{% extends 'AppBundle::template.html.twig' %}
+
+{% block title %} Event creation - DWH CRM {% endblock %}
+
+{% block body -%}
+    <h1>Event creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('events_list') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

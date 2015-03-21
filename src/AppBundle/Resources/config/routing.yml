@@ -1,0 +1,12 @@
+app_event:
+    resource: "@AppBundle/Resources/config/routing/event.yml"
+    prefix:   /event
+
+app_contact:
+    resource: "@AppBundle/Resources/config/routing/contact.yml"
+    prefix:   /contact
+
+_contacts:
+    path: /
+    defaults: { _controller: "AppBundle:Contact:index" }
+
