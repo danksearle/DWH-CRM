@@ -36,3 +36,7 @@
 # Composer PHAR
 /composer.phar
 
+# Hide temporary and cache Foundation files
+/web/.sass-cache/*
+/web/*.DS_Store
+

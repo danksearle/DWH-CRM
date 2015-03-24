@@ -6,6 +6,11 @@
     <meta name="Description" content="{% block page_description %}Listados{% endblock %}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 {% block stylesheets %}
+{% stylesheets 
+ 'stylesheets/app.css'
+ %}
+<link rel="stylesheet" href="{{ asset_url }}">
+{% endstylesheets %}
 {% endblock %}
 </head>
 <body>
@@ -45,6 +50,11 @@
       </footer>
 
 {% block javascripts %}
+{% javascripts 
+ 'js/app.js'
+ %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
 {% endblock %}
 
 </body>
